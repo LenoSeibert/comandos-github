@@ -6,14 +6,14 @@
 ## 01 - Gerar chave SSH no pelo terminal Debian/Derivados
 
 ```bash
-ls -al ~/.ssh #Para ver chaves existentes
-ssh-keygen -t ed25519 -C "your_email@example.com" #Gera a chave so dar enter nas perguntas
+sudo ls -al ~/.ssh #Para ver chaves existentes
+sudo ssh-keygen -t ed25519 -C "your_email@example.com" #Gera a chave so dar enter nas perguntas
 #Mas da onde saiu esse ed25519? EdDSA é o tipo de criptografia
-eval "$(ssh-agent -s)" #Inicia o agente ssh, vai mostrar o numero do processo
-ssh-add ~/.ssh/id_ed25519 #Adiciona a chave ao ssh-agent Chave Privada
-cat  ~/.ssh/id_ed25519.pub #Para ver e copiar a chave publica, 
+sudo eval "$(ssh-agent -s)" #Inicia o agente ssh, vai mostrar o numero do processo
+sudo ssh-add ~/.ssh/id_ed25519 #Adiciona a chave ao ssh-agent Chave Privada
+sudo cat  ~/.ssh/id_ed25519.pub #Para ver e copiar a chave publica, 
 #que vai no site do GitHub
-ssh -T git@github.com #Testa a conexão 
+sudo ssh -T git@github.com #Testa a conexão 
 ```
 ### Link da documentação do GitHub 
 [Conectar-se ao GitHub com SSH](https://docs.github.com/pt/github/authenticating-to-github/connecting-to-github-with-ssh)
